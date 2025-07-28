@@ -51,6 +51,16 @@ class Parquimetro {
       return;
     }
 
+    const valorMaximo = 3.00;
+    let valorDepositado = valor;
+    let troco = 0;
+
+    if (valor > valorMaximo) {
+      troco = valor - valorMaximo;
+      valorDepositado = valorMaximo;
+      alert(`Valor máximo de R$3,00 atingido. Troco de R$${troco.toFixed(2)} será devolvido.`);
+    }
+
     this.saldo += valor;
     this.atualizarSaldo();
 
